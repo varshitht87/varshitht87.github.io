@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Portfolio of Sai Krishna Varshith: AI and data projects, photography, video and events. MSc Artificial Intelligence, Dublin.">
+<title>Sai Krishna Varshith</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Hanken+Grotesk:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>:root{color-scheme:light}html{-webkit-text-size-adjust:100%}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>
+/* Layout concept: a landscape drawn from data. Ridgeline header art over a calm, wide single column; case studies read as pipelines, creative work sits beside them as equals. */
+:root {
+  --bg: #edf0ee;
+  --surface: #f7f9f8;
+  --ink: #12201d;
+  --muted: #4d605b;
+  --line: #c6d1cd;
+  --accent: #0b6e6a;
+  --ridge: #2c8580;
+  --font-display: "Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Hanken Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1413;
+    --surface: #111d1b;
+    --ink: #e6efec;
+    --muted: #94a9a4;
+    --line: #243431;
+    --accent: #4fd1c5;
+    --ridge: #3fa79f;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1413;
+  --surface: #111d1b;
+  --ink: #e6efec;
+  --muted: #94a9a4;
+  --line: #243431;
+  --accent: #4fd1c5;
+  --ridge: #3fa79f;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.6;
+  padding-block: 20px 56px;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+.wrap { max-width: 1040px; margin: 0 auto; display: flex; flex-direction: column; gap: 72px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.08; margin: 0; text-wrap: balance; letter-spacing: -0.015em; }
+p { margin: 0; }
+.label { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+
+/* top bar */
+.bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 12px 24px; }
+.bar nav { display: flex; flex-wrap: wrap; gap: 6px 22px; }
+.bar nav a { font-family: var(--font-mono); font-size: 13px; color: var(--ink); text-decoration: none; padding: 4px 0; border-bottom: 1px solid transparent; }
+.bar nav a:hover { border-bottom-color: var(--accent); }
+
+/* hero */
+.hero { display: flex; flex-direction: column; gap: 28px; }
+.hero h1 { font-size: clamp(44px, 9vw, 96px); max-width: 12ch; }
+.hero .lede { font-size: clamp(19px, 2.4vw, 24px); max-width: 38ch; line-height: 1.45; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.facts span { font-family: var(--font-mono); font-size: 13px; color: var(--muted); }
+.facts b { color: var(--ink); font-weight: 500; }
+.art { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); margin-top: 8px; }
+.art canvas { display: block; width: 100%; height: clamp(170px, 26vw, 280px); }
+.art-note { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 10px; }
+
+/* section heads */
+.sec-head { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+.sec-head h2 { font-size: clamp(30px, 5vw, 46px); }
+.sec-head p { color: var(--muted); max-width: 56ch; }
+
+/* case studies */
+.cases { display: flex; flex-direction: column; }
+.case { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: 20px 48px; padding-block: 36px; border-top: 1px solid var(--line); }
+.case:last-child { border-bottom: 1px solid var(--line); }
+.case h3 { font-size: clamp(24px, 3vw, 32px); }
+.case .meta { display: flex; flex-direction: column; gap: 12px; }
+.case .body { display: flex; flex-direction: column; gap: 18px; min-width: 0; }
+.case dl { margin: 0; display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 10px 18px; }
+.case dt { font-family: var(--font-mono); font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); padding-top: 4px; }
+.case dd { margin: 0; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; counter-reset: s; }
+.steps li { counter-increment: s; font-family: var(--font-mono); font-size: 13px; padding: 5px 12px; border: 1px solid var(--line); background: var(--surface); }
+.steps li::before { content: counter(s) " "; color: var(--accent); }
+.tools { display: flex; flex-wrap: wrap; gap: 6px; }
+.tools span { font-family: var(--font-mono); font-size: 12px; color: var(--muted); border: 1px solid var(--line); padding: 2px 8px; }
+.also { margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px 32px; }
+.also div { display: flex; flex-direction: column; gap: 4px; padding-top: 14px; border-top: 1px solid var(--line); }
+.also h4 { margin: 0; font-family: var(--font-display); font-size: 18px; }
+.also p { font-size: 15px; color: var(--muted); }
+
+/* creative */
+.creative { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 20px; }
+.card { background: var(--surface); border: 1px solid var(--line); padding: 26px; display: flex; flex-direction: column; gap: 12px; min-width: 0; }
+.card h3 { font-size: 24px; }
+.card p { color: var(--muted); font-size: 16px; }
+.card .label { color: var(--accent); }
+.bridge { margin-top: 24px; max-width: 64ch; font-size: 18px; }
+
+/* skills + about */
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 48px; }
+.rows { display: flex; flex-direction: column; }
+.rows > div { display: grid; grid-template-columns: 8.5rem minmax(0, 1fr); gap: 4px 18px; padding-block: 14px; border-top: 1px solid var(--line); }
+.rows > div:last-child { border-bottom: 1px solid var(--line); }
+.rows .label { padding-top: 4px; }
+.rows p { color: var(--ink); }
+.rows small { display: block; color: var(--muted); font-size: 14px; }
+
+/* contact */
+.contact { display: flex; flex-direction: column; gap: 16px; padding: 36px 0 0; border-top: 1px solid var(--line); }
+.contact h2 { font-size: clamp(30px, 5vw, 46px); max-width: 18ch; }
+.mailrow { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; }
+.mail { font-family: var(--font-mono); font-size: clamp(15px, 3.6vw, 20px); user-select: all; overflow-wrap: anywhere; }
+button.copy { font: inherit; font-family: var(--font-mono); font-size: 13px; color: var(--bg); background: var(--accent); border: 0; padding: 8px 16px; cursor: pointer; }
+button.copy:hover { filter: brightness(1.08); }
+.status { font-family: var(--font-mono); font-size: 13px; color: var(--muted); min-height: 1.4em; }
+footer { color: var(--muted); font-size: 14px; }
+
+@media (max-width: 760px) {
+  .case { grid-template-columns: minmax(0, 1fr); padding-block: 28px; }
+  .case dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .case dt { padding-top: 10px; }
+  .rows > div { grid-template-columns: minmax(0, 1fr); }
+  .wrap { gap: 56px; }
+}
+</style>
+</head>
+<body>
+
+
+<div class="wrap">
+  <header class="bar">
+    <span class="label">Portfolio · Dublin, Ireland</span>
+    <nav aria-label="Sections">
+      <a href="#work">Work</a>
+      <a href="#creative">Creative</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Sai Krishna Varshith</h1>
+    <p class="lede">I build AI and data projects, and I make them clear and visual. I also shoot photo and video.</p>
+    <div class="facts">
+      <span><b>MSc Artificial Intelligence</b>, Dublin Business School</span>
+      <span>Graduating <b>April 2027</b></span>
+      <span>Looking for <b>internships and graduate roles</b> in AI and data, Ireland</span>
+    </div>
+    <div class="art">
+      <canvas id="ridge" role="img" aria-label="Generated artwork: stacked ridgelines forming a mountain landscape"></canvas>
+    </div>
+    <div class="art-note">
+      <span class="label">Header art, generated in code from a seeded random series</span>
+      <a class="label" href="#creative" style="text-decoration:none">About the art ↓</a>
+    </div>
+  </section>
+
+  <section id="work">
+    <div class="sec-head">
+      <span class="label">Selected work</span>
+      <h2>Four projects, each starting from a question</h2>
+      <p>Each one covers the question, what I built, and what it showed. Code for all of them is available on request.</p>
+    </div>
+
+    <div class="cases">
+      <article class="case">
+        <div class="meta">
+          <span class="label">Forecasting · Data pipeline</span>
+          <h3>Steam player-count forecasting</h3>
+        </div>
+        <div class="body">
+          <dl>
+            <dt>Question</dt><dd>Can player counts for Steam games be forecast reliably, and which model does it best?</dd>
+            <dt>Built</dt><dd>An end-to-end pipeline, from automated data collection to a custom TCN-Attention hybrid model benchmarked against standard baselines.</dd>
+            <dt>Outcome</dt><dd>The hybrid outperformed every baseline it was compared against.</dd>
+          </dl>
+          <ol class="steps" aria-label="Pipeline stages">
+            <li>Collect, automated</li><li>Store, VM-hosted database</li><li>Preprocess</li><li>Model</li><li>Compare to baselines</li>
+          </ol>
+          <div class="tools"><span>Python</span><span>SQL</span><span>Pandas</span><span>TCN</span><span>Attention</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="meta">
+          <span class="label">NLP · Application</span>
+          <h3>FinQuery, financial question answering</h3>
+        </div>
+        <div class="body">
+          <dl>
+            <dt>Question</dt><dd>Can a person ask a plain-language question about finance and get a usable answer?</dd>
+            <dt>Built</dt><dd>A financial question-answering system with a Streamlit interface, so the model can be used without touching code.</dd>
+            <dt>Outcome</dt><dd>A working tool, scoped down to the features that the task actually needed.</dd>
+          </dl>
+          <div class="tools"><span>Python</span><span>NLP</span><span>Streamlit</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="meta">
+          <span class="label">Prediction · Ensembles</span>
+          <h3>YouTube virality across regions</h3>
+        </div>
+        <div class="body">
+          <dl>
+            <dt>Question</dt><dd>What separates videos that go viral from videos that do not, and does it change by region?</dd>
+            <dt>Built</dt><dd>An ensemble model that predicts virality from video data across several regions.</dd>
+            <dt>Outcome</dt><dd>A cross-region comparison that shows which signals carry the prediction.</dd>
+          </dl>
+          <div class="tools"><span>Python</span><span>Feature engineering</span><span>Ensemble models</span></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <div class="meta">
+          <span class="label">Reinforcement learning · Operations</span>
+          <h3>Tram dispatch optimisation</h3>
+        </div>
+        <div class="body">
+          <dl>
+            <dt>Question</dt><dd>Can an agent learn to dispatch trams better than a fixed schedule?</dd>
+            <dt>Built</dt><dd>A custom Gymnasium environment for tram dispatch, with Q-learning, Monte Carlo, DDPG and TD3 agents compared on it.</dd>
+            <dt>Outcome</dt><dd>Practice turning an operations problem into states, actions and rewards, and comparing methods on the same footing.</dd>
+          </dl>
+          <div class="tools"><span>Python</span><span>Gymnasium</span><span>Q-learning</span><span>DDPG</span><span>TD3</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="also">
+      <div><span class="label">Graph analysis</span><h4>Twitter network on Neo4j</h4><p>Graph embeddings and similarity with FastRP, KNN and GraphSAGE.</p></div>
+      <div><span class="label">Recommender systems</span><h4>Mult-VAE on MyAnimeList</h4><p>A variational autoencoder recommender trained on anime ratings.</p></div>
+      <div><span class="label">Computer vision</span><h4>Tesla model classification</h4><p>Transfer learning to tell vehicle models apart.</p></div>
+      <div><span class="label">Dissertation, in progress</span><h4>Earthquake prediction</h4><p>Fusing several data sources into one machine learning model.</p></div>
+    </div>
+  </section>
+
+  <section id="creative">
+    <div class="sec-head">
+      <span class="label">Creative</span>
+      <h2>The same eye, behind a camera</h2>
+      <p>Outside the lab I shoot, film and organise. It shapes how I frame a chart and how I tell a result.</p>
+    </div>
+    <div class="creative">
+      <div class="card">
+        <span class="label">Photography</span>
+        <h3>Landscape and travel</h3>
+        <p>I photograph landscapes and places on a DSLR and an iPhone. I was a member of the Photography Club at VIT Chennai.</p>
+      </div>
+      <div class="card">
+        <span class="label">Video</span>
+        <h3>Content for creators</h3>
+        <p>I do videography and photography work for content creators, from planning shots to filming on DSLR and iPhone.</p>
+      </div>
+      <div class="card">
+        <span class="label">Events</span>
+        <h3>CULture IT Club</h3>
+        <p>As a core member at VIT Chennai, I planned and managed events on the cultures and diversity across India. I also filmed college events for the Photography Club.</p>
+      </div>
+      <div class="card">
+        <span class="label">Creative code</span>
+        <h3>The header art</h3>
+        <p>The ridgelines at the top are drawn by a short script. A seeded random series is shaped into a mountain and stacked row by row, the way a data person would paint a landscape.</p>
+      </div>
+    </div>
+    <p class="bridge">Framing, composition and editing are the same habits I use when I turn a model result into one clear chart.</p>
+  </section>
+
+  <section id="skills">
+    <div class="two">
+      <div>
+        <div class="sec-head"><span class="label">Skills</span><h2>What I work with</h2></div>
+        <div class="rows">
+          <div><span class="label">Data</span><p>SQL, Python, ETL pipelines, REST APIs, automated data collection, preprocessing, statistical interpretation</p></div>
+          <div><span class="label">Libraries</span><p>Pandas, NumPy, Matplotlib, Streamlit</p></div>
+          <div><span class="label">Machine learning</span><p>Forecasting, classification, NLP, recommender systems, graph ML, reinforcement learning</p></div>
+          <div><span class="label">Tools</span><p>Git, VM-hosted databases</p></div>
+          <div><span class="label">Cloud</span><p>AWS Certified Cloud Practitioner<small>Valid to January 2027</small></p></div>
+        </div>
+      </div>
+      <div>
+        <div class="sec-head"><span class="label">Background</span><h2>Where I come from</h2></div>
+        <div class="rows">
+          <div><span class="label">2026 to 2027</span><p>MSc Artificial Intelligence<small>Dublin Business School, expected April 2027</small></p></div>
+          <div><span class="label">To 2025</span><p>B.Tech Computer Science and Engineering, AI and ML specialisation<small>VIT Chennai</small></p></div>
+          <div><span class="label">Work</span><p>Customer Assistant, SPAR, Dublin, part-time alongside the MSc<small>Earlier retail and hospitality work in India</small></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <span class="label">Contact</span>
+    <h2>Hiring for AI or data? Let's talk.</h2>
+    <div class="mailrow">
+      <span class="mail" id="mail">varshitht87@gmail.com</span>
+      <button class="copy" id="copy" type="button">Copy email</button>
+    </div>
+    <p class="status" id="status" aria-live="polite"></p>
+    <p>CV and project code are available on request.</p>
+  </section>
+
+  <footer>Sai Krishna Varshith · Dublin, Ireland</footer>
+</div>
+
+<script>
+(function () {
+  var canvas = document.getElementById('ridge');
+  var ctx = canvas.getContext('2d');
+
+  function rng(seed) {
+    return function () {
+      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function token(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+  }
+
+  function draw() {
+    var dpr = window.devicePixelRatio || 1;
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    if (!w || !h) return;
+    canvas.width = Math.round(w * dpr);
+    canvas.height = Math.round(h * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+
+    var bg = token('--bg'), ridge = token('--ridge'), accent = token('--accent');
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, w, h);
+
+    var rand = rng(20270419);
+    var rows = 30, top = h * 0.18, bottom = h - 8;
+    var step = Math.max(3, Math.round(w / 220));
+    var phase = [];
+    for (var k = 0; k < 6; k++) phase.push(rand() * 6.28);
+
+    for (var i = 0; i < rows; i++) {
+      var t = i / (rows - 1);
+      var y0 = top + t * (bottom - top);
+      var peak = (h * 0.5) * (1 - 0.35 * t);
+      var jitter = rand();
+      ctx.beginPath();
+      ctx.moveTo(0, y0);
+      for (var x = 0; x <= w; x += step) {
+        var u = x / w;
+        var shape = Math.exp(-Math.pow((u - 0.62) / 0.2, 2)) + 0.55 * Math.exp(-Math.pow((u - 0.25) / 0.12, 2));
+        var n = 0.55 * Math.sin(u * 22 + phase[0] + t * 3) + 0.3 * Math.sin(u * 47 + phase[1] - t * 5) + 0.15 * Math.sin(u * 91 + phase[2] + jitter * 6);
+        var y = y0 - peak * shape * (0.55 + 0.45 * n * 0.5 + 0.2) * (0.6 + 0.4 * t);
+        ctx.lineTo(x, y);
+      }
+      ctx.lineTo(w, y0);
+      ctx.lineTo(w, h + 4);
+      ctx.lineTo(0, h + 4);
+      ctx.closePath();
+      ctx.fillStyle = bg;
+      ctx.fill();
+      ctx.lineWidth = i === rows - 1 ? 1.6 : 1.1;
+      ctx.strokeStyle = i === rows - 1 ? accent : ridge;
+      ctx.globalAlpha = 0.35 + 0.65 * t;
+      ctx.stroke();
+      ctx.globalAlpha = 1;
+    }
+  }
+
+  draw();
+  window.addEventListener('resize', draw);
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  if (mq.addEventListener) mq.addEventListener('change', draw);
+  new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+
+  var btn = document.getElementById('copy');
+  var status = document.getElementById('status');
+  var mail = document.getElementById('mail');
+  btn.addEventListener('click', function () {
+    var text = mail.textContent;
+    function fallback() {
+      var r = document.createRange(); r.selectNodeContents(mail);
+      var s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      status.textContent = 'Address selected. Press copy on your device.';
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () {
+        status.textContent = 'Email copied.';
+      }, fallback);
+    } catch (e) { fallback(); }
+  });
+})();
+</script>
+
+</body>
+</html>
