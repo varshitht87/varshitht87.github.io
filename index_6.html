@@ -1,0 +1,727 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" media="(prefers-color-scheme: light)" content="#d5e1f2">
+<meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0b1020">
+<meta name="color-scheme" content="light dark">
+<meta name="description" content="Portfolio of Sai Krishna Varshith: AI and data projects, photography, video and events. MSc Artificial Intelligence, Dublin.">
+<title>Sai Krishna Varshith</title>
+<style>:root{color-scheme:light;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}[hidden]{display:none!important}img{max-width:100%}</style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=Hanken+Grotesk:wght@400;500;600&family=Martian+Mono:wght@400;500&display=swap">
+<style>
+/* Layout concept: a full-bleed generated landscape opens the page, with the name above the ridgelines. Below it, work is shown as camera frames: a question, what was built, and a data strip like photo metadata. The creative section lets the visitor change the light on a landscape. */
+:root {
+  --bg: #edf1f6;
+  --surface: #f8fafd;
+  --ink: #0f1a2e;
+  --muted: #4f5c78;
+  --line: #c7d1e1;
+  --accent: #9a4d00;
+  --on-accent: #ffffff;
+  --sky-top: #d5e1f2;
+  --sky-mid: #f1dccd;
+  --sky-low: #f6c69c;
+  --sun: #fff4da;
+  --ridge-far: #b1bbda;
+  --ridge-near: #3a4570;
+  --rim: #ffffff;
+  --stars: 0;
+  --font-display: "Newsreader", Georgia, "Times New Roman", serif;
+  --font-body: "Hanken Grotesk", system-ui, -apple-system, "Segoe UI", Arial, sans-serif;
+  --font-data: "Martian Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0b1020;
+    --surface: #121a30;
+    --ink: #e9eef8;
+    --muted: #95a2c0;
+    --line: #25314f;
+    --accent: #f3b24e;
+    --on-accent: #1a1206;
+    --sky-top: #0b1020;
+    --sky-mid: #34285a;
+    --sky-low: #e58a45;
+    --sun: #ffd08a;
+    --ridge-far: #5a4a88;
+    --ridge-near: #090c1a;
+    --rim: #ffb27a;
+    --stars: 0.5;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0b1020;
+  --surface: #121a30;
+  --ink: #e9eef8;
+  --muted: #95a2c0;
+  --line: #25314f;
+  --accent: #f3b24e;
+  --on-accent: #1a1206;
+  --sky-top: #0b1020;
+  --sky-mid: #34285a;
+  --sky-low: #e58a45;
+  --sun: #ffd08a;
+  --ridge-far: #5a4a88;
+  --ridge-near: #090c1a;
+  --rim: #ffb27a;
+  --stars: 0.5;
+  color-scheme: dark;
+}
+@media (prefers-contrast: more) { :root { --muted: #2a3650; --line: #6b7a99; } }
+@media (prefers-contrast: more) and (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --muted: #c5d0e8; --line: #5f7097; } }
+@media (prefers-contrast: more) { :root[data-theme="dark"] { --muted: #c5d0e8; --line: #5f7097; } }
+
+* { box-sizing: border-box; }
+html { -webkit-tap-highlight-color: transparent; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 1.0625rem; line-height: 1.6; }
+a, button { touch-action: manipulation; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+h1, h2, h3, h4, p, dl, dd, ol, figure { margin: 0; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 500; text-wrap: balance; }
+.in { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.k { font-size: 0.8125rem; font-weight: 500; color: var(--muted); }
+.muted { color: var(--muted); }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 0 22px; font: 500 0.9375rem/1 var(--font-body); text-decoration: none; border: 1px solid var(--accent); background: var(--accent); color: var(--on-accent); cursor: pointer; user-select: none; -webkit-user-select: none; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), filter 150ms ease, background-color 150ms ease; }
+.btn:active { transform: scale(0.97); }
+.btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink); }
+@media (hover: hover) and (pointer: fine) {
+  .btn:hover { filter: brightness(1.08); }
+  .btn.ghost:hover { background: var(--ink); color: var(--bg); filter: none; }
+}
+
+/* hero */
+.hero { position: relative; overflow: hidden; background: var(--sky-top); color: var(--ink); padding-block: 20px 190px; }
+.hero canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hero-in { position: relative; z-index: 1; display: flex; flex-direction: column; gap: 28px; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr); max-width: 520px; width: 100%; margin-inline: auto; }
+.hero-copy { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px; min-width: 0; }
+.stage { position: relative; height: clamp(380px, 54vh, 520px); min-width: 0; }
+.stage model-viewer { display: block; width: 100%; height: 100%; background: transparent; --poster-color: transparent; --progress-bar-color: transparent; cursor: grab; touch-action: pan-y; outline: none; opacity: 0; transition: opacity 400ms ease-out; }
+.stage model-viewer.ready { opacity: 1; }
+.stage model-viewer:active { cursor: grabbing; }
+.no-stage .stage { display: none; }
+.sr { position: absolute; width: 1px; height: 1px; margin: -1px; padding: 0; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+.dock { position: absolute; left: 0; right: 0; bottom: 34px; z-index: 3; pointer-events: none; }
+.dock-in { display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.caption { pointer-events: auto; background: rgba(8, 12, 24, 0.82); color: #f4f6fb; padding: 12px 18px; max-width: 640px; text-align: center; font-size: 1.0625rem; font-weight: 500; line-height: 1.4; min-height: calc(2.8em + 24px); display: flex; align-items: center; justify-content: center; margin: 0; }
+.caption:empty { visibility: hidden; }
+.dock-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; pointer-events: auto; }
+.chip { min-height: 44px; padding: 0 16px; font: 500 0.875rem/1 var(--font-body); color: var(--ink); background: var(--surface); border: 1px solid var(--line); cursor: pointer; user-select: none; -webkit-user-select: none; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 150ms ease, color 150ms ease; }
+.chip:active { transform: scale(0.97); }
+.chip[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); border-color: var(--accent); }
+.dock .chip { background: rgba(8, 12, 24, 0.72); color: #f4f6fb; border-color: rgba(244, 246, 251, 0.45); }
+@media (hover: hover) and (pointer: fine) { .chip[aria-pressed="false"]:hover { background: var(--line); } .dock .chip:hover { background: rgba(244, 246, 251, 0.18); } }
+.bar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 4px 24px; }
+.bar nav { display: flex; flex-wrap: wrap; gap: 0 22px; }
+.bar nav a { color: var(--ink); text-decoration: none; font-size: 0.9375rem; font-weight: 500; padding: 10px 0; border-bottom: 1px solid transparent; transition: border-color 150ms ease, opacity 100ms ease-out; }
+.bar nav a:active { opacity: 0.6; }
+@media (hover: hover) and (pointer: fine) { .bar nav a:hover { border-bottom-color: var(--accent); } }
+.hero h1 { font-size: clamp(2.5rem, 6vw, 4.5rem); line-height: 1; letter-spacing: -0.035em; max-width: 16ch; }
+@media (min-width: 700px) { .hero h1 { max-width: none; } }
+.lede { margin-inline: auto; font-family: var(--font-display); font-size: clamp(1.25rem, 2.6vw, 1.75rem); line-height: 1.35; max-width: 46ch; }
+.facts { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px 40px; }
+.facts div { display: flex; flex-direction: column; align-items: center; min-width: 0; }
+.facts .v { font-size: 0.9375rem; font-weight: 500; }
+.cta { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.hint { position: absolute; z-index: 2; bottom: 8px; left: max(16px, env(safe-area-inset-left, 0px)); font-size: 0.75rem; color: #e9eef8; opacity: 0.85; display: none; }
+@media (hover: hover) and (pointer: fine) { .hint { display: block; } }
+
+/* sections */
+main { display: flex; flex-direction: column; gap: clamp(72px, 10vw, 128px); padding-block: clamp(64px, 9vw, 104px) 48px; }
+.sec-head { display: flex; flex-direction: column; gap: 12px; margin-bottom: 36px; }
+.sec-head h2 { font-size: clamp(2rem, 5vw, 3.25rem); line-height: 1.08; letter-spacing: -0.022em; }
+.sec-head p { color: var(--muted); max-width: 56ch; }
+
+/* frames */
+.frame { position: relative; background: var(--surface); border: 1px solid var(--line); padding: clamp(20px, 3vw, 32px); display: flex; flex-direction: column; gap: 22px; min-width: 0; }
+.frame::before, .frame::after { content: ""; position: absolute; width: 16px; height: 16px; border: 0 solid var(--accent); pointer-events: none; }
+.frame::before { top: -1px; left: -1px; border-top-width: 2px; border-left-width: 2px; }
+.frame::after { bottom: -1px; right: -1px; border-bottom-width: 2px; border-right-width: 2px; }
+.frame h3 { font-size: 1.625rem; line-height: 1.12; letter-spacing: -0.012em; }
+.ask { font-family: var(--font-display); font-style: italic; font-size: 1.25rem; line-height: 1.35; }
+.frame dl { display: flex; flex-direction: column; gap: 14px; }
+.frame dt { font-size: 0.8125rem; font-weight: 500; color: var(--muted); }
+.frame dd { margin-top: 2px; }
+.flow { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 0; font-size: 0.875rem; font-weight: 500; }
+.flow li { display: inline-flex; align-items: center; }
+.flow li:not(:last-child)::after { content: "→"; color: var(--accent); margin: 0 10px; }
+.code { align-self: flex-start; font-size: 0.9375rem; font-weight: 500; padding-block: 6px; }
+.links { display: flex; flex-wrap: wrap; gap: 0 28px; }
+.links a { font-weight: 500; padding-block: 10px; }
+.also h4 a { color: inherit; }
+.exif { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr)); gap: 12px 24px; border-top: 1px solid var(--line); padding-top: 16px; margin-top: auto; font-family: var(--font-data); }
+.exif div { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.exif .ek { font-size: 0.625rem; color: var(--muted); letter-spacing: 0.04em; }
+.exif .ev { font-size: 0.75rem; overflow-wrap: anywhere; }
+.feature .top { display: flex; flex-direction: column; gap: 22px; }
+.feature .lead { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.feature h3 { font-size: clamp(1.875rem, 4vw, 2.75rem); letter-spacing: -0.02em; }
+.feature .ask { font-size: clamp(1.25rem, 2.4vw, 1.625rem); }
+.trio { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 24px; margin-top: 24px; }
+.also { margin-top: 56px; display: grid; grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr)); gap: 24px 32px; }
+.also div { display: flex; flex-direction: column; gap: 4px; padding-top: 14px; border-top: 1px solid var(--line); min-width: 0; }
+.also h4 { font-family: var(--font-display); font-weight: 500; font-size: 1.25rem; }
+.also p { font-size: 0.9375rem; color: var(--muted); }
+
+/* creative */
+.studio { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 40px 56px; align-items: start; }
+.study { display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.study canvas { display: block; width: 100%; max-width: 100%; aspect-ratio: 16 / 10; background: var(--sky-top); }
+.seg { display: flex; flex-wrap: wrap; border: 1px solid var(--line); background: var(--surface); }
+.seg button { flex: 1 1 4.5rem; min-height: 44px; font: 500 0.9375rem/1 var(--font-body); color: var(--ink); background: transparent; border: 0; border-right: 1px solid var(--line); cursor: pointer; user-select: none; -webkit-user-select: none; transition: transform 160ms cubic-bezier(0.23, 1, 0.32, 1), background-color 150ms ease, color 150ms ease; }
+.seg button:last-child { border-right: 0; }
+.seg button:active { transform: scale(0.97); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--on-accent); }
+@media (hover: hover) and (pointer: fine) { .seg button[aria-pressed="false"]:hover { background: var(--line); } }
+.study figcaption { font-size: 0.9375rem; color: var(--muted); max-width: 52ch; }
+.notes { display: flex; flex-direction: column; }
+.note { padding-block: 20px; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.note:last-child { border-bottom: 1px solid var(--line); }
+.note h3 { font-size: 1.5rem; letter-spacing: -0.01em; }
+.note p { color: var(--muted); }
+.bridge { margin-top: 48px; font-family: var(--font-display); font-size: clamp(1.5rem, 3.4vw, 2.25rem); line-height: 1.25; max-width: 28ch; letter-spacing: -0.012em; }
+
+/* skills and background */
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr)); gap: 56px; }
+.rows { display: flex; flex-direction: column; }
+.rows > div { display: grid; grid-template-columns: 9.5rem minmax(0, 1fr); gap: 4px 18px; padding-block: 16px; border-top: 1px solid var(--line); }
+.rows > div:last-child { border-bottom: 1px solid var(--line); }
+.rows .k { padding-top: 2px; }
+.rows small { display: block; color: var(--muted); font-size: 0.875rem; }
+
+/* contact */
+.contact { display: flex; flex-direction: column; gap: 18px; padding-top: 40px; border-top: 1px solid var(--line); }
+.contact h2 { font-size: clamp(2.25rem, 6vw, 4rem); line-height: 1.04; letter-spacing: -0.028em; max-width: 16ch; }
+.mailrow { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.mail { font-family: var(--font-data); font-size: clamp(0.875rem, 3.4vw, 1.125rem); overflow-wrap: anywhere; user-select: all; }
+.status { font-size: 0.875rem; color: var(--muted); min-height: 1.4em; }
+footer { color: var(--muted); font-size: 0.875rem; padding-top: 8px; }
+
+/* motion: one page-load entrance, nothing scroll-triggered */
+@keyframes rise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+@keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+.hero-copy > * { animation: rise 320ms cubic-bezier(0.23, 1, 0.32, 1) both; }
+.hero-copy > :nth-child(2) { animation-delay: 50ms; }
+.hero-copy > :nth-child(3) { animation-delay: 100ms; }
+.hero-copy > :nth-child(4) { animation-delay: 150ms; }
+.bar, .stage { animation: fade 320ms ease-out both; }
+.stage { animation-delay: 120ms; }
+@media (prefers-reduced-motion: reduce) { .hero-copy > *, .bar, .stage { animation-name: fade; animation-duration: 200ms; } }
+
+@media (min-width: 900px) {
+  .feature .top { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 56px; align-items: start; }
+}
+@media (max-width: 860px) {
+  .studio { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 560px) {
+  .rows > div { grid-template-columns: minmax(0, 1fr); }
+}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <canvas id="sky" aria-hidden="true"></canvas>
+  <div class="in hero-in">
+    <div class="bar">
+      <span class="k">Portfolio, Dublin</span>
+      <nav aria-label="Sections">
+        <a href="#work">Work</a>
+        <a href="#creative">Creative</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+    <div class="hero-copy">
+      <h1>Sai Krishna Varshith</h1>
+      <p class="lede">I build AI and data projects, and I make them clear and visual. I also shoot photo and video.</p>
+      <div class="cta">
+        <a class="btn" href="#contact">Get in touch</a>
+        <a class="btn ghost" href="#work">See the work</a>
+      </div>
+    </div>
+    <div class="hero-grid">
+      <div class="stage" id="stage">
+        <model-viewer id="avatar" src="avatar.glb" alt="A 3D model of Varshith in a navy suit, slowly turning" auto-rotate auto-rotate-delay="0" rotation-per-second="22deg" camera-controls disable-zoom disable-pan interaction-prompt="none" camera-orbit="20deg 82deg auto" min-camera-orbit="auto 60deg auto" max-camera-orbit="auto 100deg auto" field-of-view="24deg" camera-target="0m 0.9m 0m" shadow-intensity="0" exposure="1.05" environment-image="neutral" loading="eager"></model-viewer>
+      </div>
+    </div>
+  </div>
+  <div class="dock">
+    <div class="in dock-in">
+      <p class="caption" id="caption" aria-hidden="true"></p>
+      <p class="sr" id="intro-sr"></p>
+      <div class="dock-actions">
+        <button class="chip" id="skip" type="button" hidden>Skip intro</button>
+        <button class="chip" id="replay" type="button" hidden>Replay intro</button>
+      </div>
+    </div>
+  </div>
+  <span class="hint">Generated in code. Move your pointer to shift the layers.</span>
+</header>
+
+<main>
+  <section id="work" class="in">
+    <div class="sec-head">
+      <h2>Four projects, each starting from a question</h2>
+      <p>Each one covers what I asked, what I built and what it showed. The code for the four main projects is on GitHub.</p>
+    </div>
+
+    <article class="frame feature">
+      <div class="top">
+        <div class="lead">
+          <span class="k">Forecasting and data pipeline</span>
+          <h3>Steam player-count forecasting</h3>
+          <p class="ask">Can player counts for Steam games be forecast reliably, and which model does it best?</p>
+        </div>
+        <dl>
+          <div><dt>Built</dt><dd>An end-to-end pipeline, from automated data collection to a custom TCN-Attention hybrid model benchmarked against standard baselines.</dd></div>
+          <div><dt>Outcome</dt><dd>The hybrid outperformed every baseline it was compared against.</dd></div>
+        </dl>
+      </div>
+      <ol class="flow" aria-label="Pipeline stages">
+        <li>Collect, automated</li><li>Store, VM-hosted database</li><li>Preprocess</li><li>Model</li><li>Compare to baselines</li>
+      </ol>
+      <a class="code" href="https://github.com/varshitht87/Steam-Player-Count-Forecasting-using-Deep-Learning">Code on GitHub</a>
+        <div class="exif">
+        <div><span class="ek">STACK</span><span class="ev">Python, SQL, Pandas</span></div>
+        <div><span class="ek">METHOD</span><span class="ev">TCN-Attention hybrid</span></div>
+        <div><span class="ek">DOMAIN</span><span class="ev">Forecasting</span></div>
+      </div>
+    </article>
+
+    <div class="trio">
+      <article class="frame">
+        <div>
+          <span class="k">Text mining and application</span>
+          <h3>FinQuery, financial news topics</h3>
+        </div>
+        <p class="ask">What is the financial news talking about right now, and can headlines be grouped into topics automatically?</p>
+        <dl>
+          <div><dt>Built</dt><dd>A Streamlit app that pulls live financial news headlines and clusters them into topics using TF-IDF and LDA.</dd></div>
+          <div><dt>Outcome</dt><dd>A working tool that turns a stream of headlines into readable topic groups.</dd></div>
+        </dl>
+        <ol class="flow" aria-label="Stages"><li>Live headlines</li><li>TF-IDF and LDA</li><li>Topics in Streamlit</li></ol>
+        <a class="code" href="https://github.com/varshitht87/FinQuery">Code on GitHub</a>
+        <div class="exif">
+          <div><span class="ek">STACK</span><span class="ev">Python, Streamlit</span></div>
+          <div><span class="ek">METHOD</span><span class="ev">TF-IDF, LDA topic modelling</span></div>
+          <div><span class="ek">DOMAIN</span><span class="ev">Financial news</span></div>
+        </div>
+      </article>
+
+      <article class="frame">
+        <div>
+          <span class="k">Prediction and ensembles</span>
+          <h3>YouTube virality across regions</h3>
+        </div>
+        <p class="ask">What separates videos that go viral from those that do not, and does it change by region?</p>
+        <dl>
+          <div><dt>Built</dt><dd>An end-to-end pipeline with scheduled data fetching and a stacking ensemble that predicts whether a video goes viral.</dd></div>
+          <div><dt>Outcome</dt><dd>A cross-region comparison showing which signals carry the prediction.</dd></div>
+        </dl>
+        <ol class="flow" aria-label="Stages"><li>Scheduled data fetching</li><li>Features</li><li>Stacking ensemble</li><li>Virality prediction</li></ol>
+        <a class="code" href="https://github.com/varshitht87/youtube_video_prediction">Code on GitHub</a>
+        <div class="exif">
+          <div><span class="ek">STACK</span><span class="ev">Python</span></div>
+          <div><span class="ek">METHOD</span><span class="ev">Stacking ensemble, feature engineering</span></div>
+          <div><span class="ek">DOMAIN</span><span class="ev">Video, multi-region</span></div>
+        </div>
+      </article>
+
+      <article class="frame">
+        <div>
+          <span class="k">Reinforcement learning</span>
+          <h3>Tram dispatch optimisation</h3>
+        </div>
+        <p class="ask">Can an agent learn to dispatch trams better than a fixed schedule?</p>
+        <dl>
+          <div><dt>Built</dt><dd>A custom environment for a five-station tram network, with a fixed-time baseline compared against Q-learning, Monte Carlo, DDPG and TD3 controllers.</dd></div>
+          <div><dt>Outcome</dt><dd>Practice turning an operations problem into states, actions and rewards, and comparing methods on equal terms.</dd></div>
+        </dl>
+        <ol class="flow" aria-label="Stages"><li>Custom environment</li><li>Five controllers</li><li>Compare methods</li></ol>
+        <a class="code" href="https://github.com/varshitht87/tram_simulation">Code on GitHub</a>
+        <div class="exif">
+          <div><span class="ek">STACK</span><span class="ev">Python, Gymnasium</span></div>
+          <div><span class="ek">METHOD</span><span class="ev">Q-learning, Monte Carlo, DDPG, TD3</span></div>
+          <div><span class="ek">DOMAIN</span><span class="ev">Operations</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="also">
+      <div><span class="k">Graph analysis</span><h4>Twitter network on Neo4j</h4><p>Graph embeddings and similarity with FastRP, KNN and GraphSAGE.</p></div>
+      <div><span class="k">Recommender systems</span><h4>Mult-VAE on MyAnimeList</h4><p>A variational autoencoder recommender trained on anime ratings.</p></div>
+      <div><span class="k">Computer vision</span><h4><a href="https://github.com/varshitht87/Tesla-Model-prediction">Tesla model classification</a></h4><p>Transfer learning across four pre-trained CNN backbones to tell Tesla models apart.</p></div>
+      <div><span class="k">Dissertation, in progress</span><h4>Earthquake prediction</h4><p>Fusing several data sources into one machine learning model.</p></div>
+    </div>
+  </section>
+
+  <section id="creative" class="in">
+    <div class="sec-head">
+      <h2>The same eye, behind a camera</h2>
+      <p>Outside the lab I shoot, film and organise. It shapes how I frame a chart and how I tell a result.</p>
+    </div>
+    <div class="studio">
+      <figure class="study">
+        <canvas id="study" role="img" aria-label="Generated landscape of layered mountain ridges under a sun, shown in the selected light"></canvas>
+        <div class="seg" role="group" aria-label="Time of day">
+          <button type="button" data-pal="dawn" aria-pressed="false">Dawn</button>
+          <button type="button" data-pal="day" aria-pressed="false">Day</button>
+          <button type="button" data-pal="dusk" aria-pressed="true">Dusk</button>
+          <button type="button" data-pal="night" aria-pressed="false">Night</button>
+        </div>
+        <figcaption>Light study. One landscape drawn in code, shown at four times of day. It is generated, not a photograph.</figcaption>
+      </figure>
+      <div class="notes">
+        <div class="note"><h3>Photography</h3><p>Landscape and travel, shot on a DSLR and an iPhone. I was a member of the Photography Club at VIT Chennai. <a href="https://www.instagram.com/varshith.77/">See more photos on Instagram</a>.</p></div>
+        <div class="note"><h3>Video</h3><p>Videography and photography for content creators, from planning shots to filming on DSLR and iPhone.</p></div>
+        <div class="note"><h3>Events</h3><p>Core member of CULture IT Club at VIT Chennai. I planned and managed events on the cultures and diversity across India, and filmed college events for the Photography Club.</p></div>
+      </div>
+    </div>
+    <p class="bridge">Framing, composition and editing are the habits I use when I turn a model result into one clear chart.</p>
+  </section>
+
+  <section id="skills" class="in">
+    <div class="two">
+      <div>
+        <div class="sec-head"><h2>What I work with</h2></div>
+        <div class="rows">
+          <div><span class="k">Data</span><p>SQL, Python, ETL pipelines, REST APIs, automated data collection, preprocessing, statistical interpretation</p></div>
+          <div><span class="k">Libraries</span><p>Pandas, NumPy, Matplotlib, Streamlit</p></div>
+          <div><span class="k">Machine learning</span><p>Forecasting, classification, NLP, recommender systems, graph ML, reinforcement learning</p></div>
+          <div><span class="k">Tools</span><p>Git, VM-hosted databases</p></div>
+          <div><span class="k">Cloud</span><p>AWS Certified Cloud Practitioner<small>Valid to January 2027</small></p></div>
+        </div>
+      </div>
+      <div>
+        <div class="sec-head"><h2>Where I come from</h2></div>
+        <div class="rows">
+          <div><span class="k">2026 to 2027</span><p>MSc Artificial Intelligence<small>Dublin Business School, expected April 2027</small></p></div>
+          <div><span class="k">To 2025</span><p>B.Tech Computer Science and Engineering, AI and ML specialisation<small>VIT Chennai</small></p></div>
+          <div><span class="k">Work</span><p>Customer Assistant at SPAR, Dublin, part-time alongside the MSc<small>Earlier retail and hospitality work in India</small></p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="in">
+    <div class="contact">
+      <h2>Hiring for AI or data? Let's talk.</h2>
+      <div class="mailrow">
+        <span class="mail" id="mail">varshitht87@gmail.com</span>
+        <button class="btn" id="copy" type="button">Copy email</button>
+      </div>
+      <p class="status" id="status" aria-live="polite"></p>
+      <p class="links"><a href="https://github.com/varshitht87">GitHub</a><a href="https://www.linkedin.com/in/sai-krishna-varshith">LinkedIn</a></p>
+      <p class="muted">CV available on request.</p>
+    </div>
+  </section>
+
+  <footer class="in">Sai Krishna Varshith, Dublin, Ireland</footer>
+</main>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var fine = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+  var KEYS = ['skyTop', 'skyMid', 'skyLow', 'sun', 'far', 'near', 'rim'];
+  var N = 6, PAD = 40, STEP = 4;
+
+  function clamp01(x) { return Math.min(1, Math.max(0, x)); }
+  function easeOut(x) { return 1 - Math.pow(1 - x, 4); }
+  function hex(s, fb) {
+    var m = /^#?([0-9a-f]{6})$/i.exec((s || '').trim());
+    if (!m) return fb;
+    var n = parseInt(m[1], 16);
+    return [(n >> 16) & 255, (n >> 8) & 255, n & 255];
+  }
+  function css(c, a) {
+    return 'rgba(' + Math.round(c[0]) + ',' + Math.round(c[1]) + ',' + Math.round(c[2]) + ',' + (a == null ? 1 : a) + ')';
+  }
+  function mix(a, b, t) { return [a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t, a[2] + (b[2] - a[2]) * t]; }
+  function pal(o) {
+    var p = {};
+    KEYS.forEach(function (k) { p[k] = hex(o[k], [0, 0, 0]); });
+    p.stars = o.stars || 0;
+    return p;
+  }
+  function copyPal(p) {
+    var q = {};
+    KEYS.forEach(function (k) { q[k] = p[k].slice(); });
+    q.stars = p.stars;
+    return q;
+  }
+  function tokenPal() {
+    var cs = getComputedStyle(root);
+    function g(n) { return cs.getPropertyValue(n); }
+    return pal({ skyTop: g('--sky-top'), skyMid: g('--sky-mid'), skyLow: g('--sky-low'), sun: g('--sun'), far: g('--ridge-far'), near: g('--ridge-near'), rim: g('--rim'), stars: parseFloat(g('--stars')) });
+  }
+  var STUDY = {
+    dawn: { skyTop: '#4A5E9A', skyMid: '#D98E8A', skyLow: '#F6C58E', sun: '#FFF1C9', far: '#8E8FB8', near: '#2B3157', rim: '#FFE3B8', stars: 0 },
+    day: { skyTop: '#3E86D0', skyMid: '#8EC1EA', skyLow: '#D9EEF8', sun: '#FFFFFF', far: '#9DB7CF', near: '#1F4A5C', rim: '#FFFFFF', stars: 0 },
+    dusk: { skyTop: '#1B1F4A', skyMid: '#7A3F78', skyLow: '#F08A4B', sun: '#FFD08A', far: '#6A4A86', near: '#120F26', rim: '#FFB27A', stars: 0.15 },
+    night: { skyTop: '#050813', skyMid: '#0E1735', skyLow: '#1E2F5C', sun: '#DDE6FF', far: '#1A2547', near: '#04060F', rim: '#6F86C9', stars: 0.9 }
+  };
+
+  function rng(seed) {
+    return function () {
+      seed |= 0; seed = (seed + 0x6D2B79F5) | 0;
+      var t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function ridge(x) { return 1 - Math.abs(Math.sin(x)); }
+
+  function createScene(canvas, o) {
+    var r = rng(o.seed), i;
+    var sc = {
+      ctx: canvas.getContext('2d'), w: 0, h: 0, R: 0,
+      pal: o.palette, tgt: o.palette, morphing: false,
+      px: 0, pxT: 0, prog: (o.intro && !reduce) ? 0 : 1, introStart: null,
+      raf: 0, last: 0, layers: [], stars: []
+    };
+    for (i = 0; i < N; i++) sc.layers.push({ p1: r() * 6.28, p2: r() * 6.28, p3: r() * 6.28, e: r() * 2 - 1 });
+    for (i = 0; i < 70; i++) sc.stars.push({ x: r(), y: r(), a: 0.3 + 0.7 * r(), s: r() < 0.15 ? 1.6 : 1 });
+
+    sc.resize = function () {
+      var dpr = Math.min(2, window.devicePixelRatio || 1);
+      var w = canvas.clientWidth, h = canvas.clientHeight;
+      if (!w || !h) return;
+      sc.w = w; sc.h = h; sc.R = o.R(w, h);
+      canvas.width = Math.round(w * dpr);
+      canvas.height = Math.round(h * dpr);
+      sc.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      sc.draw();
+    };
+
+    sc.draw = function () {
+      var w = sc.w, h = sc.h, R = sc.R, p = sc.pal, ctx = sc.ctx;
+      if (!w || !h) return;
+      var g = ctx.createLinearGradient(0, 0, 0, h);
+      g.addColorStop(0, css(p.skyTop));
+      g.addColorStop(clamp01((h - 1.1 * R) / h), css(p.skyTop));
+      g.addColorStop(clamp01((h - 0.7 * R) / h), css(p.skyMid));
+      g.addColorStop(clamp01((h - 0.4 * R) / h), css(p.skyLow));
+      g.addColorStop(1, css(p.skyLow));
+      ctx.fillStyle = g;
+      ctx.fillRect(0, 0, w, h);
+
+      if (p.stars > 0.01) {
+        var sy = Math.max(0, h - 1.3 * R);
+        ctx.fillStyle = '#ffffff';
+        for (var s = 0; s < sc.stars.length; s++) {
+          var st = sc.stars[s];
+          ctx.globalAlpha = Math.min(1, p.stars * st.a);
+          ctx.fillRect(st.x * w, st.y * sy, st.s, st.s);
+        }
+        ctx.globalAlpha = 1;
+      }
+
+      var sunRise = easeOut(clamp01(sc.prog * 1.25));
+      var sx = w * 0.7 + sc.px * 3, sy2 = h - R * 0.62 + (1 - sunRise) * R * 0.55, sr = R * 0.15;
+      var gr = ctx.createRadialGradient(sx, sy2, sr * 0.6, sx, sy2, R * 0.8);
+      gr.addColorStop(0, css(p.sun, 0.5));
+      gr.addColorStop(1, css(p.sun, 0));
+      ctx.fillStyle = gr;
+      ctx.fillRect(0, 0, w, h);
+      ctx.fillStyle = css(p.sun, 1);
+      ctx.beginPath();
+      ctx.arc(sx, sy2, sr, 0, 6.2832);
+      ctx.fill();
+
+      for (var i = 0; i < N; i++) {
+        var t = i / (N - 1), L = sc.layers[i];
+        var local = clamp01(sc.prog * 1.7 - t * 0.7);
+        var drop = (1 - easeOut(local)) * R * 0.6;
+        var baseY = h - R * (0.56 - 0.47 * t) + drop;
+        var amp = R * (0.44 - 0.18 * t);
+        var off = sc.px * (6 + 26 * t);
+        var fa = 2.2 + 3.6 * t, fb = 5.1 + 6 * t, fc = 11 + 9 * t;
+        var ys = [], xs = [], x, u;
+        for (x = -PAD; x <= w + PAD; x += STEP) {
+          u = (x - off) / w;
+          var hh = 0.55 * ridge(u * fa * 3.1416 + L.p1) + 0.3 * ridge(u * fb * 3.1416 + L.p2) + 0.15 * ridge(u * fc * 3.1416 + L.p3);
+          var env = 0.6 + 0.4 * Math.exp(-Math.pow((u - 0.5 - 0.12 * L.e) / 0.4, 2));
+          xs.push(x); ys.push(baseY - amp * hh * env);
+        }
+        var col = mix(mix(p.far, p.near, t), p.skyLow, 0.3 * (1 - t));
+        ctx.beginPath();
+        ctx.moveTo(xs[0], h + 2);
+        for (var k = 0; k < xs.length; k++) ctx.lineTo(xs[k], ys[k]);
+        ctx.lineTo(xs[xs.length - 1], h + 2);
+        ctx.closePath();
+        ctx.fillStyle = css(col);
+        ctx.fill();
+        if (t < 0.7) {
+          ctx.beginPath();
+          ctx.moveTo(xs[0], ys[0]);
+          for (var m = 1; m < xs.length; m++) ctx.lineTo(xs[m], ys[m]);
+          ctx.strokeStyle = css(p.rim, 0.4 * (1 - t));
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+      }
+      ctx.fillStyle = css(p.near);
+      ctx.fillRect(0, h - 28, w, 28);
+    };
+
+    sc.frame = function (ts) {
+      var dt = sc.last ? Math.min(64, ts - sc.last) : 16;
+      var busy = false;
+      sc.last = ts;
+      if (sc.prog < 1) {
+        if (sc.introStart === null) sc.introStart = ts;
+        sc.prog = Math.min(1, (ts - sc.introStart) / 1100);
+        busy = true;
+      }
+      var d = sc.pxT - sc.px;
+      if (Math.abs(d) > 0.0005) { sc.px += d * (1 - Math.exp(-dt / 110)); busy = true; } else { sc.px = sc.pxT; }
+      if (sc.morphing) {
+        var k = 1 - Math.exp(-dt / 90), diff = 0;
+        KEYS.forEach(function (key) {
+          for (var c = 0; c < 3; c++) {
+            var v = sc.pal[key][c], tg = sc.tgt[key][c], nv = v + (tg - v) * k;
+            sc.pal[key][c] = nv; diff += Math.abs(tg - nv);
+          }
+        });
+        var sv = sc.pal.stars + (sc.tgt.stars - sc.pal.stars) * k;
+        diff += Math.abs(sc.tgt.stars - sv) * 100;
+        sc.pal.stars = sv;
+        if (diff < 0.5) { sc.pal = copyPal(sc.tgt); sc.morphing = false; } else { busy = true; }
+      }
+      sc.draw();
+      sc.raf = 0;
+      if (busy) sc.raf = requestAnimationFrame(sc.frame); else sc.last = 0;
+    };
+    sc.kick = function () { if (!sc.raf) { sc.last = 0; sc.raf = requestAnimationFrame(sc.frame); } };
+    sc.setTarget = function (p) {
+      sc.tgt = p;
+      if (reduce) { sc.pal = copyPal(p); sc.draw(); return; }
+      sc.morphing = true; sc.kick();
+    };
+
+    if (window.ResizeObserver) new ResizeObserver(sc.resize).observe(canvas);
+    else window.addEventListener('resize', sc.resize);
+    sc.resize();
+    return sc;
+  }
+
+  var heroCanvas = document.getElementById('sky');
+  var hero = createScene(heroCanvas, {
+    seed: 20270419, intro: true, palette: tokenPal(),
+    R: function (w) { return Math.min(280, Math.max(180, w * 0.26)); }
+  });
+  if (!reduce) setTimeout(hero.kick, 100);
+  if (fine && !reduce) {
+    var heroEl = document.getElementById('top');
+    heroEl.addEventListener('pointermove', function (e) {
+      var rc = heroEl.getBoundingClientRect();
+      hero.pxT = ((e.clientX - rc.left) / rc.width - 0.5) * 2;
+      hero.kick();
+    });
+    heroEl.addEventListener('pointerleave', function () { hero.pxT = 0; hero.kick(); });
+  }
+  function retheme() { hero.pal = tokenPal(); hero.tgt = hero.pal; hero.morphing = false; hero.draw(); }
+  var mq = window.matchMedia('(prefers-color-scheme: dark)');
+  if (mq.addEventListener) mq.addEventListener('change', retheme);
+  new MutationObserver(retheme).observe(root, { attributes: true, attributeFilter: ['data-theme'] });
+
+  var study = createScene(document.getElementById('study'), {
+    seed: 7311, intro: false, palette: pal(STUDY.dusk),
+    R: function (w, h) { return h * 0.62; }
+  });
+  var seg = document.querySelectorAll('.seg button');
+  Array.prototype.forEach.call(seg, function (b) {
+    b.addEventListener('click', function () {
+      Array.prototype.forEach.call(seg, function (o) { o.setAttribute('aria-pressed', o === b ? 'true' : 'false'); });
+      study.setTarget(pal(STUDY[b.getAttribute('data-pal')]));
+    });
+  });
+
+  var btn = document.getElementById('copy');
+  var status = document.getElementById('status');
+  var mail = document.getElementById('mail');
+  var timer;
+  btn.addEventListener('click', function () {
+    var text = mail.textContent;
+    function done() {
+      status.textContent = 'Email copied.';
+      btn.textContent = 'Copied';
+      clearTimeout(timer);
+      timer = setTimeout(function () { btn.textContent = 'Copy email'; }, 1600);
+    }
+    function fallback() {
+      var rg = document.createRange(); rg.selectNodeContents(mail);
+      var sel = window.getSelection(); sel.removeAllRanges(); sel.addRange(rg);
+      status.textContent = 'Address selected. Press copy on your device.';
+    }
+    try { navigator.clipboard.writeText(text).then(done, fallback); } catch (e) { fallback(); }
+  });
+})();
+</script>
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script>
+(function () {
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function $(id) { return document.getElementById(id); }
+  var LINES = [
+    "Hi, I'm Sai Krishna Varshith.",
+    "I'm studying for an MSc in Artificial Intelligence at Dublin Business School.",
+    "I build AI and data projects, and I make them clear and visual.",
+    "I also shoot photo and video.",
+    "Scroll down to see my work."
+  ];
+  var grid = document.querySelector('.hero-grid'), mv = $('avatar');
+  var capEl = $('caption'), srEl = $('intro-sr'), skipBtn = $('skip'), replayBtn = $('replay');
+  srEl.textContent = LINES.join(' ');
+
+  /* 3D model: loaded by <model-viewer>. If the script or file fails, hide the stage and keep the captions. */
+  function noStage() { grid.classList.add('no-stage'); }
+  if (reduce) mv.removeAttribute('auto-rotate');
+  mv.addEventListener('error', noStage);
+  if (!window.customElements || !customElements.get('model-viewer')) {
+    var t = setTimeout(function () { if (!customElements.get('model-viewer')) noStage(); }, 8000);
+    if (window.customElements) customElements.whenDefined('model-viewer').then(function () { clearTimeout(t); });
+  }
+  mv.addEventListener('load', function () { mv.classList.add('ready'); });
+
+  /* captions */
+  var idx = 0, charIdx = 0, timer = 0, text = '';
+  function clearTimer() { clearTimeout(timer); timer = 0; }
+  function showLine(i) { idx = i; text = LINES[i]; charIdx = 0; capEl.textContent = ''; typeTick(); }
+  function typeTick() {
+    charIdx++;
+    capEl.textContent = text.slice(0, charIdx);
+    if (charIdx < text.length) {
+      var ch = text.charAt(charIdx - 1);
+      timer = setTimeout(typeTick, 36 + (ch === ',' || ch === '.' ? 170 : 0));
+    } else {
+      timer = setTimeout(next, 1400 + text.length * 16);
+    }
+  }
+  function next() { if (idx + 1 < LINES.length) showLine(idx + 1); else finish(false); }
+  function finish(jump) {
+    clearTimer();
+    if (jump) capEl.textContent = LINES[LINES.length - 1];
+    skipBtn.hidden = true; replayBtn.hidden = false;
+  }
+  function start() { clearTimer(); skipBtn.hidden = false; replayBtn.hidden = true; showLine(0); }
+  skipBtn.addEventListener('click', function () { finish(true); });
+  replayBtn.addEventListener('click', start);
+  if (reduce) { capEl.textContent = LINES.join(' '); }
+  else { setTimeout(start, 1100); }
+})();
+</script>
+</body>
+</html>
